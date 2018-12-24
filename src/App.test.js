@@ -5,6 +5,9 @@ import { render } from 'react-testing-library'
 
 describe("Run App tests", ()=>{
     it("should run App test", () => {
-        render(<App1 />)
+        render(<App />)
+    })
+    it("should run tests", () => {
+        expect(true).toEqual(false)
     })
 });
