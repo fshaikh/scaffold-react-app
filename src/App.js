@@ -1,33 +1,28 @@
-import React from 'react';
-import { hot } from 'react-hot-loader/root'
+import React, { Component } from 'react';
+import './App.css';
+import logo from './react-icon.png';
 
-class App extends React.Component {
-    constructor(props){
-        super(props);
-    }
-
-    // Define state using Property Initialzer syntax.
-    state = {
-        counter: 0
-    }
-
-    // Define event handlers without a need for explicit bind
-    increment = () => {
-        this.setState(prevState => ({counter: prevState.counter + 1}));
-    }
-    decrement = () => {
-        this.setState(prevState => ({counter: prevState.counter - 1}));
-    }
-    render(){
-        return (
-            <React.Fragment>
-                <div>Counter Demo</div>
-                <h3>{this.state.counter}</h3>
-                <button onClick={this.increment}>+</button>
-                <button onClick={this.decrement}>-</button>
-            </React.Fragment>
-            
-        )
-    }
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
+    );
+  }
 }
-export default hot(App);
+
+export default App;

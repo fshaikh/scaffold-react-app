@@ -2,3 +2,5 @@ dist
 webpack.config.base.js
 webpack.config.dev.js
 webpack.config.production.js
+jest.config.js
+testSetup.js
