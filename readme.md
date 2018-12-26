@@ -474,12 +474,9 @@ https://github.com/facebook/jest/issues/3094
 ### Setup Linter
 Linter is a code quality tool that analyses your code without executing it to find common JS errors. Common JS Linters are: ESLint, JSLint , JSHint, TSLint . We will be using ESLint. ESLint allows writing custom rules which can be shared within a team.
 
-  Code   -> ESLint                    ->  Results
-                      Set of Rules
-                      Configuration
-            -> Parser            ->   AST   -> Rules executed against AST      ->    Results
-                   (Espree)                              (ESTraverse)
-    A ESLint Plugin is a set of custom rules.  It is usually installed as a NPM package. The name format is "eslint-plugin-<name>"
+![](https://github.com/fshaikh/scaffold-react-app/blob/master/images/eslint-arch.png)
+
+A ESLint Plugin is a set of custom rules.  It is usually installed as a NPM package. The name format is "eslint-plugin-<name>"
 
 #### Setup ESLint
 	• npm i -D eslint eslint-plugin-react eslint-plugin-babel
