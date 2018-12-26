@@ -8,6 +8,6 @@ describe('Run App tests', ()=>{
         render(<App />);
     });
     it('should run jest tests', () => {
-        expect(true).toEqual(false);
+        expect(true).toEqual(true);
     });
 });

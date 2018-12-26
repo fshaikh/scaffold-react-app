@@ -353,7 +353,7 @@ In this example we are defining state in the constructor and explicitly binding 
 
 We will need to use babel plugin to enable support for the above syntax. If we try to build the new syntax , the build will fail with the following error.
 ![](https://github.com/fshaikh/scaffold-react-app/blob/master/images/ProposedFeatures-Error.png)
-pm i -D babel-plugin-transform-class-properties
+npm i -D babel-plugin-transform-class-properties
 	• Add the new plugin in .babelrc:
 	   "plugins": ["transform-class-properties"]
 	• npm run dev
@@ -403,10 +403,10 @@ Run webpack in production mode to minify CSS files
 ### Setup Test with Jest
 We will be using Jest to write and run our tests. Jest is recommended to be used with React
 
-Install Jest
+#### Install Jest
 npm  i -D jest-cli jest
 
-Write and run tests
+#### Write and run tests
 By convention, Jest will look for tests in "__tests__" directory or files with "*.spec.js" or "test.js" extensions. We can either create a separate "__tests__" directory and place all our tests there or co-locate them with  the component being tested.
 
 Let's follow the approach of co-locating the test file. Name the test file as "App.test.js"
@@ -450,7 +450,27 @@ We will be using react-testing-library is used for testing React components. Wor
 	       render(<App />)
 	    })
 	});
-npm run test
+    npm run test
+
+#### Mocking assets
+When testing components which import css/scss or other static assets like images, Jest tests will fail since Jest cannot understand how to import CSS/images. This section explains the steps to make tests work with such components
+
+	• Create a folder __mocks__ in root directory
+	• Create 2 files as described below:
+			§ __mocks__/styleMock.js
+				□ module.exports = {};
+			§ __mocks__/fileMock.js
+				□ module.exports = 'test-file-stub';
+	• Add "moduleNameMapper" in jest.config.js as below:
+	moduleNameMapper: {
+	"\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+	"\\.(gif|ttf|eot|svg|png)$": "<rootDir>/__mocks__/fileMock.js"
+	}
+	• npm run test
+
+References:
+https://github.com/facebook/jest/issues/3094
+
 ### Setup Linter
 Linter is a code quality tool that analyses your code without executing it to find common JS errors. Common JS Linters are: ESLint, JSLint , JSHint, TSLint . We will be using ESLint. ESLint allows writing custom rules which can be shared within a team.
 
