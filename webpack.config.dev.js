@@ -6,18 +6,5 @@ module.exports = merge(BaseConfig, {
     devServer: {
         port: 3030
     },
-    module: {
-        rules: [
-            {
-                test: /\.(pdf|jpg|png|gif|svg|ico)$/,
-                use: [
-                    {
-                        loader: 'url-loader'
-                    },
-                ]
-            }
-        ]
-
-    },
     devtool: 'source-map'
 });
