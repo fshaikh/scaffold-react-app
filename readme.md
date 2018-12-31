@@ -609,7 +609,7 @@ This will create a report html file as configured in reportFileName in 'dist' fo
 npm run build
 ```
 This will do production build and open the report in browser.
-(https://github.com/fshaikh/scaffold-react-app/blob/master/images/webpack-bundle-analyzer.jpg)
+![](https://github.com/fshaikh/scaffold-react-app/blob/master/images/webpack-bundle-analyzer.jpg)
 The various bundle sizes for our entire bundle can be seen by hovering over app.bundle.js at the top.
 * Stat size is 168.36 KB
 * Parsed size is 149.33 KB. This is highlighted as this is the one that's going to impact our performance.
